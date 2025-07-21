@@ -21,6 +21,7 @@
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | `boolean` | `false` |
+| alwaysShowClear | 是否一直显示清除图标，先需要设置 clearable 为 true，该配置才可以生效 | `boolean` | `false` |
 | clearIcon | 自定义清除图标 | `ReactNode` | `<CloseCircleFill />` |
 | defaultValue | 默认值 | `string` | - |
 | disabled | 是否禁用 | `boolean` | `false` |
@@ -29,6 +30,7 @@
 | min | 最小值，仅在 `type` 为 `number` 时生效 | `number` | - |
 | onChange | 输入框内容变化时触发 | `(value: string) => void` | - |
 | onClear | 点击清除按钮后触发 | `() => void` | - |
+| onPreClear | 点击清除按钮前触发，该方法接收 clear 参数方法，可以自定义决定是否需要执行清除动作 | `(clear: () => void) => void` | - |
 | onEnterPress | 按下回车的回调 | `(e: React.KeyboardEvent<HTMLInputElement>) => void` | - |
 | onlyShowClearWhenFocus | 如果 `true`，那么只有输入框聚焦时才会显示清除按钮；如果为 `false`，那么输入框失去焦点后依旧会显示清除按钮 | `boolean` | `true` |
 | placeholder | 提示文本 | `string` | - |

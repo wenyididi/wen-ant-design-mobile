@@ -21,6 +21,7 @@ The `Input` component is layout-independent. It only includes the most basic inp
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
 | clearable | Whether to enable the clear icon, the input box will be cleared after clicking the clear icon | `boolean` | `false` |
+| alwaysShowClear | Whether to always show the clear icon | `boolean` | `false` |
 | clearIcon | Custom clear icon | `ReactNode` | `<CloseCircleFill />` |
 | defaultValue | The default value | `string` | - |
 | disabled | Whether it is disabled or not | `boolean` | `false` |
@@ -29,6 +30,7 @@ The `Input` component is layout-independent. It only includes the most basic inp
 | min | Minimum value, only valid when `type` is `number` | `number` | - |
 | onChange | Triggered when the input content is changed | `(value: string) => void` | - |
 | onClear | Triggered after clicking the clear button | `() => void` | - |
+| onPreClear | Triggered before clicking the clear button | `(clear: () => void) => void` | - |
 | onEnterPress | The callback when Enter key is pressed | `(e: React.KeyboardEvent<HTMLInputElement>) => void` | - |
 | onlyShowClearWhenFocus | If `true`, the clear button will only be displayed when the input box is focused. If `false`, the clear button will still be displayed after the input box loses focus. | `boolean` | `true` |
 | placeholder | The prompt text | `string` | - |

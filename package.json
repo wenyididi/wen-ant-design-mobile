@@ -1,14 +1,14 @@
 {
-  "name": "antd-mobile",
+  "name": "wen-antd-mobile",
   "version": "5.40.0",
-  "homepage": "https://github.com/ant-design/ant-design-mobile#readme",
+  "homepage": "https://github.com/wenyididi/wen-ant-design-mobile/tree/develop#readme",
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design-mobile/issues"
+    "url": "https://github.com/wenyididi/wen-ant-design-mobile/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ant-design/ant-design-mobile.git",
-    "branch": "master",
+    "url": "git+https://github.com/wenyididi/wen-ant-design-mobile.git",
+    "branch": "develop",
     "platform": "github"
   },
   "license": "MIT",
@@ -29,7 +29,7 @@
     "./lib"
   ],
   "scripts": {
-    "build": "gulp",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && gulp",
     "build-doc": "dumi build && echo '!.*' > dist/.surgeignore",
     "postinstall": "husky install",
     "lint": "eslint . && stylelint \"**/*.{css,less,scss}\"",
@@ -41,7 +41,7 @@
     "pub:dev": "npm publish ./lib --tag dev",
     "size-limit": "size-limit",
     "size-limit:ci": "size-limit --json",
-    "start": "dumi dev",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && dumi dev",
     "test": "jest",
     "ci-install-react-19": "pnpm i react@19 react-dom@19",
     "test-with-coverage": "jest --coverage"

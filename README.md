@@ -1,7 +1,7 @@
 <div align="center">
 
   <img src="https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg" alt="logo" width="200" height="auto" />
-  <h1>Ant Design Mobile</h1>
+  <h1>Wen Ant Design Mobile</h1>
 
   <p>
     Essential UI blocks for building mobile web apps. 
@@ -21,13 +21,13 @@
 </div>
 
 ```bash
-$ npm install antd-mobile
+$ npm install wen-antd-mobile
 # or
-$ yarn add antd-mobile
+$ yarn add wen-antd-mobile
 # or
-$ pnpm add antd-mobile
+$ pnpm add wen-antd-mobile
 # or
-$ bun add antd-mobile
+$ bun add wen-antd-mobile
 ```
 
 - **Fast**: It is carefully optimized for harsh scenes, without configuration, you can have the best package size and ultimate performance.
@@ -43,8 +43,7 @@ If you have some questions about how to use ant-mobile, you can start a [discuss
 
 ---
 
-
-## 🤝 Contributing 
+## 🤝 Contributing
 
 Thanks to all the contributors of antd-mobile:
 

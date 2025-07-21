@@ -58,9 +58,11 @@ export type InputProps = Pick<
   defaultValue?: string
   onChange?: (val: string) => void
   clearable?: boolean
+  alwaysShowClear?: boolean
   clearIcon?: ReactNode
   onlyShowClearWhenFocus?: boolean
   onClear?: () => void
+  onPreClear?: (clear: () => void) => void
   onEnterPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   min?: number
   max?: number
@@ -133,6 +135,7 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
   }
 
   const shouldShowClear = (() => {
+    if (mergedProps.clearable && mergedProps.alwaysShowClear) return true
     if (!mergedProps.clearable || !value || mergedProps.readOnly) return false
     if (mergedProps.onlyShowClearWhenFocus) {
       return hasFocus
@@ -208,13 +211,21 @@ export const Input = forwardRef<InputRef, InputProps>((props, ref) => {
             e.preventDefault()
           }}
           onClick={() => {
-            setValue('')
-            mergedProps.onClear?.()
+            const clear = () => {
+              setValue('')
+              mergedProps.onClear?.()
 
-            // https://github.com/ant-design/ant-design-mobile/issues/5212
-            if (isIOS() && compositionStartRef.current) {
-              compositionStartRef.current = false
-              nativeInputRef.current?.blur()
+              // https://github.com/ant-design/ant-design-mobile/issues/5212
+              if (isIOS() && compositionStartRef.current) {
+                compositionStartRef.current = false
+                nativeInputRef.current?.blur()
+              }
+            }
+
+            if (typeof mergedProps.onPreClear === 'function') {
+              mergedProps.onPreClear(clear)
+            } else {
+              clear()
             }
           }}
           aria-label={locale.Input.clear}
